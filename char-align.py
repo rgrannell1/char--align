@@ -36,20 +36,31 @@ def filterSelections (positions):
 
 
 
+def insertWhitespace(self, edit, selections, maxCol):
+
+	for row, col in selections:
+
+		point = self.view.text_point(row, col)
+		self.view.insert(edit, point, ' ' * (maxCol - col))
+
+
+
+
 
 def alignSelections (self, edit):
 
-	view            = self.view
-	selections      = view.sel( )
+	selections      = self.view.sel( )
 	cursorPositions = [ ]
 
 	for region in selections:
-		cursorPositions.append( view.rowcol(region.begin( )) )
+		cursorPositions.append( self.view.rowcol(region.begin( )) )
 
 	toAlign = filterSelections(cursorPositions)
 	maxCol  = max(toAlign, key = lambda position: position[1])[1]
 
-	print( maxCol )
+	insertWhitespace(self, edit, toAlign, maxCol)
+
+
 
 
 
