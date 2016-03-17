@@ -18,9 +18,9 @@ __authors__ = ['Ryan Grannell (@RyanGrannell)']
 
 
 
-class CharAlignCommand ( ):
+class CharAlignCommand (sublime_plugin.TextCommand):
 
-	def run (sublime_plugin.TextCommand):
+	def run (self):
 
 		view       = self.view
 		selection  = view.sel( )
@@ -29,7 +29,5 @@ class CharAlignCommand ( ):
 		tab_size   = int(settings.get('tab_size', 8))
 		use_spaces = settings.get('translate_tabs_to_spaces')
 
-		if len(selection) === 1:
-			pass
-		else:
-			pass
+		if len(selection) > 1:
+			print(selection)
