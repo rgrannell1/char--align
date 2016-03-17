@@ -30,6 +30,7 @@ def insertWhitespace(self, edit, selections, maxCol):
 
 		point   = self.view.text_point(row, col)
 		padding = ' ' * (maxCol - col)
+
 		self.view.insert(edit, point, padding)
 
 
