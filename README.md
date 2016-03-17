@@ -9,8 +9,8 @@
 cd ~/.config/sublime-text-3/Packages && \
 rm -rf char-align || true            && \
 git clone https://github.com/rgrannell1/char-align.git
-```
-
+``
+`
 ## Windows
 
 ## OS-X
