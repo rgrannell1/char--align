@@ -7,19 +7,6 @@ import sublime_plugin
 
 
 
-
-# dsa:              asddsaasdsadsad
-# dsaaaaaa:              asddsaasdsadsad
-# dfs:              asddsaasdsadsad
-# s:              asddsaasdsadsad
-# dfssssssssss:              asddsaasdsadsad
-# ds:              asddsaasdsadsad
-# dfskdfkdsfkdsfk:              asddsaasdsadsad
-
-
-
-
-
 def filterSelections (positions):
 
 	rows = { }
@@ -36,12 +23,14 @@ def filterSelections (positions):
 
 
 
+
 def insertWhitespace(self, edit, selections, maxCol):
 
 	for row, col in selections:
 
-		point = self.view.text_point(row, col)
-		self.view.insert(edit, point, ' ' * (maxCol - col))
+		point   = self.view.text_point(row, col)
+		padding = ' ' * (maxCol - col)
+		self.view.insert(edit, point, padding)
 
 
 
@@ -68,11 +57,7 @@ class AlignCommand(sublime_plugin.TextCommand):
 
 	def run(self, edit):
 
-		view       = self.view
-		selection  = view.sel( )
-		settings   = view.settings( )
-		tab_size   = int(settings.get('tab_size', 8))
-		use_spaces = settings.get('translate_tabs_to_spaces')
+		view = self.view
 
-		if len(selection) > 0:
+		if len(view.sel( )) > 0:
 			alignSelections(self, edit)
