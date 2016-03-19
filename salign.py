@@ -1,9 +1,13 @@
 #! /usr/bin/env python 3
 
+import os
 import sublime
 import sublime_plugin
-from   cmds import *
 
+dirpath = os.path.dirname(os.path.abspath(__file__))
+cmdPath = os.path.join(dirpath, 'cmds.py')
+
+exec(open(cmdPath).read( ))
 
 
 
