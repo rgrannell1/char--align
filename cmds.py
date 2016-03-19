@@ -49,16 +49,3 @@ def alignSelections (self, edit):
 	maxCol  = max(toAlign, key = lambda position: position[1])[1]
 
 	insertWhitespace(self, edit, toAlign, maxCol)
-
-
-
-
-
-class AlignCommand(sublime_plugin.TextCommand):
-
-	def run(self, edit):
-
-		view = self.view
-
-		if len(view.sel( )) > 0:
-			alignSelections(self, edit)
