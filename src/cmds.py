@@ -7,7 +7,7 @@ import sublime_plugin
 
 
 
-def filterSelections (positions):
+def filter_selections (positions):
 
 	rows = { }
 
@@ -37,7 +37,7 @@ def insertWhitespace(self, edit, selections, maxCol):
 
 
 
-def alignSelections (self, edit):
+def align_selections (self, edit):
 
 	selections      = self.view.sel( )
 	cursorPositions = [ ]
@@ -45,7 +45,7 @@ def alignSelections (self, edit):
 	for region in selections:
 		cursorPositions.append( self.view.rowcol(region.begin( )) )
 
-	toAlign = filterSelections(cursorPositions)
+	toAlign = filter_selections(cursorPositions)
 	maxCol  = max(toAlign, key = lambda position: position[1])[1]
 
 	insertWhitespace(self, edit, toAlign, maxCol)
