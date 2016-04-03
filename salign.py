@@ -5,7 +5,7 @@ import sublime
 import sublime_plugin
 
 dirpath = os.path.dirname(os.path.abspath(__file__))
-cmdPath = os.path.join(dirpath, 'src/cmds.py')
+cmdPath = os.path.join(dirpath, 'src/align_selections.py')
 
 exec(open(cmdPath).read( ))
 
