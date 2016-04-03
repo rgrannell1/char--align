@@ -1,5 +1,5 @@
 
-# S-Align v0.1.0
+# S-Align v0.1.0 [![Build Status](https://travis-ci.org/rgrannell1/s-align.svg?branch=master)](https://travis-ci.org/rgrannell1/s-align)
 
 S-Align is a Sublime-Text plugin for vertically aligning multiple-selections. The alignment works reasonably fast; it instantly aligns 8,128 entries.
 
